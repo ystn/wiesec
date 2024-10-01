@@ -7,6 +7,7 @@
 <div style="display: flex; flex-direction: row; flex-wrap: wrap; align-items-center; justify-content: center;">
     <img alt="ReactJS" src="assets/React-Logo.png" style="height:150px; object-fit: contain" />
     <img alt="ReactJS" src="assets/React-Native-Logo.svg" style="width:200px; object-fit: contain" />
+    <img alt="ReactJS" src="assets/Expo-Logo.webp" style="width:200px; object-fit: contain" />
     <img alt="Django" src="assets/Django-Logo.png" style="width:200px; object-fit: contain" />
     <img alt="Langchain" src="assets/Langchain-Logo.png" style="width:200px; object-fit: contain" />
     <img alt="Gemini" src="assets/Gemini-Logo.png" style="width:200px; object-fit: contain" />
