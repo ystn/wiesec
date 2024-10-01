@@ -29,7 +29,7 @@ export default (): React.ReactElement => {
   };
 
   const onItemPress = (index: number): void => {
-    router && router.navigate('Article3');
+    // router && router.navigate('Article3');
   };
 
   const renderHeadingItem = (): React.ReactElement => (
