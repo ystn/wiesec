@@ -17,27 +17,25 @@ import { useLoginMutation } from "@/store/api/auth";
 export default function () {
     const tw = useTailwind();
     const dispatch = useDispatch();
-    // const { isLoading } = useSelector(selectSession);
-    const [login, loginResult] = useLoginMutation()
+    const { isLoading } = useSelector(selectSession);
+    // const [login, loginResult] = useLoginMutation()
     // const { data: loginData, isLoading } = loginResult
 
     const handleForgotPassword = () => {
-        Haptics.notificationAsync(Haptics.NotificationFeedbackType.Success)
         router && router.navigate('/forgot-password/step1');
     }
 
     const handleSignin = (values) => {
-        // dispatch(login({id: '1', name: 'John', last_name: 'Doe', birth: new Date(1989, 3, 5).getTime(), sex: 'male', picture: '', has_access: true}));
-        console.log("values", values);
-        login(values);
-        console.log("data", loginResult.data)
+        // dispatch(login({id: '1', name: 'John', last_name: 'Doe', birthday: new Date(1989, 3, 5).getTime(), sex: 'male', picture: '', has_access: true}));
+        dispatch(login({id: '1', first_name: 'John', last_name: 'Doe', birthday: new Date(1989, 3, 5).getTime(), picture: '', has_access: true}));
+        // console.log("values", values);
+        // login(values);
+        // console.log("data", loginResult.data)
 
-        Haptics.notificationAsync(Haptics.NotificationFeedbackType.Success)
         router.replace('/');
     }
 
     const handleSignup = () => {
-        Haptics.notificationAsync(Haptics.NotificationFeedbackType.Success)
         router && router.navigate('/sign-up');
     }
 
@@ -47,7 +45,8 @@ export default function () {
             <FormInput name="password" placeholder="Password" type="password"/>
             <Button variant="link" onPress={handleForgotPassword} title="Forgot password?" style={tw("self-end mt-0")}/>
             <View style={tw('mt-auto')}>
-                <FormButton variant="primary" onPress={handleSignin} title="Sign in" loading={loginResult.isLoading} />
+                {/* <FormButton variant="primary" onPress={handleSignin} title="Sign in" loading={loginResult.isLoading} /> */}
+                <FormButton variant="primary" onPress={handleSignin} title="Sign in" loading={isLoading} />
                 <View style={tw("flex flex-row items-center justify-center self-center mt-4")}>
                     <Text variant="link">Don't have an account? </Text>
                     <Button variant="link" onPress={handleSignup} title="Sign up" />

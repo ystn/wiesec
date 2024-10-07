@@ -1,4 +1,5 @@
 from django.middleware.csrf import get_token
+from django.views.decorators.csrf import csrf_exempt
 from rest_framework.authtoken.models import Token
 from rest_framework.authtoken.views import ObtainAuthToken
 from rest_framework.response import Response
@@ -7,7 +8,9 @@ from rest_framework.response import Response
 # Create your views here.
 class CustomAuthToken(ObtainAuthToken):
 
+    @csrf_exempt
     def post(self, request, *args, **kwargs):
+        print(request.data)
         serializer = self.serializer_class(
             data=request.data, context={"request": request}
         )

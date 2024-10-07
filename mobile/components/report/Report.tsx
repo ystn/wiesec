@@ -2,14 +2,17 @@ import { View, Text, TouchableOpacity } from 'react-native'
 import React from 'react'
 import { useTailwind } from 'tailwind-rn'
 import * as Haptics from 'expo-haptics'
+import { getFullName } from '@/utils';
 
 interface ReportProps {
-    user: User;
-    message: string;
+    report: Report;
 }
 
-const Report = () => {
+const Report = ({ report }: ReportProps) => {
     const tw = useTailwind();
+    const user = report.message.sender;
+    const message = report.message.content;
+    const reason = report.information;
 
     const handleAllow = () => {
         Haptics.notificationAsync(Haptics.NotificationFeedbackType.Success)
@@ -24,8 +27,16 @@ const Report = () => {
         <View style={tw('flex-row mb-4')}>
             <View style={tw('h-24 w-24 bg-gray-500 rounded-full')} />
             <View style={tw('px-4 py-2 flex-1')}>
-                <Text style={tw('text-white font-bold text-lg')}>John Doe</Text>
-                <Text style={tw('text-white text-wrap')} numberOfLines={3}>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</Text>
+                <View style={tw('pr-2 py-2 flex-1 text-wrap')}>
+                    <Text style={tw('text-white font-bold text-lg')}>{getFullName(user)}</Text>
+                    <Text style={tw('text-white text-wrap')} numberOfLines={3}>{message}</Text>
+                </View>
+                <View style={tw('pr-2 pt-2 flex-row flex-1')}>
+                    <Text style={tw('text-white text-wrap flex-1')} numberOfLines={3}>
+                        <Text style={tw('text-white font-bold text-wrap')}>Reason: </Text>
+                        {reason}
+                    </Text>
+                </View>
             </View>
         </View>
         <View style={tw('flex-row')}>

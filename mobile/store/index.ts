@@ -2,16 +2,20 @@ import { configureStore } from "@reduxjs/toolkit"
 import userSlice from "./slices/user"
 import { setupListeners } from "@reduxjs/toolkit/query"
 import chatbotSlice from "./slices/chatbot"
-import { messageApi } from "./slices/message"
+import { messageApi } from "./api/message"
+import { authApi } from "./api/auth"
+import locationSlice from "./slices/location"
 
 const store = configureStore({
     reducer: {
         user: userSlice.reducer,
         chatbot: chatbotSlice.reducer,
+        location: locationSlice.reducer,
         [messageApi.reducerPath]: messageApi.reducer,
+        [authApi.reducerPath]: authApi.reducer,
     },
     middleware: (getDefaultMiddleware) =>
-        getDefaultMiddleware().concat(messageApi.middleware),
+        getDefaultMiddleware().concat(messageApi.middleware).concat(authApi.middleware),
 })
 
 setupListeners(store.dispatch)

@@ -19,16 +19,24 @@ const Separator = ({active}: SeparatorProps) => {
 }
 
 const Stepper = ({steps, currentStep, onStepPress}: StepperProps) => {
-    const tw = useTailwind();
-    const arr = [...Array(steps).keys()];
+  const tw = useTailwind();
+  const arr = [...Array(steps).keys()];
+
+  function handleStepPress(step: number) {
+    if(step <= currentStep) onStepPress?.(step);
+  }
   return (
     <View style={tw('flex-row items-center m-4')}>
       {arr.map((value, index) => {
+        console.log(index)
+        console.log(index + arr.length)
+        const isFirst = value == 0;
         const isLast = value >= steps - 1;
         console.log("last", isLast)
         return <>
-            <Bubble onStepPress={onStepPress} number={value + 1} active={value < currentStep} key={index * 2} />
-            {!isLast && <Separator active={value + 1 < currentStep} key={index * 2 + 1} />}
+            {!isFirst && <Separator active={value + 1 <= currentStep} key={index + arr.length} />}
+            <Bubble onStepPress={handleStepPress} number={value + 1} currentStep={currentStep} key={index} />
+            {/* {!isLast && <Separator active={value + 1 < currentStep} key={index + arr.length} />} */}
         </>
       })}
     </View>

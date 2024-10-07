@@ -1,11 +1,18 @@
 interface User {
     id: string;
-    name: string;
+    first_name: string;
     last_name: string;
-    sex: "male" | "female";
-    birth: number;
-    picture: string;
+    // sex: "male" | "female";
+    birthday: number;
+    picture?: string;
+}
+
+interface LoggedinUser extends User {
     has_access: boolean;
+}
+
+interface SocialUser extends Omit<User, 'birthday'> {
+    status: 'default' | 'blocked' | 'allowed';
 }
 
 interface Session {
@@ -21,6 +28,13 @@ interface Message {
     date: string;
     status: 'sent' | 'pending' | 'read';
 
+}
+
+interface ReceivedMessage {
+    id: string;
+    content: string;
+    sender: SocialUser;
+    date: string;
 }
 
 interface Setting {
@@ -56,4 +70,9 @@ interface Article {
     publisher: string;
     date: string;
     image: string;
+}
+
+interface Report {
+    message: ReceivedMessage;
+    information: string;
 }

@@ -5,7 +5,6 @@ import { useSelector } from "react-redux"
 import { useTailwind } from "tailwind-rn";
 
 export default () => {
-    const tw = useTailwind();
     const {session, isLoading, value: user} = useSelector(selectSession);
     console.log(session)
 

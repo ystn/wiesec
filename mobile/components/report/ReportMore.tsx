@@ -2,6 +2,7 @@ import { View, Text, TouchableOpacity } from 'react-native'
 import React from 'react'
 import { useTailwind } from 'tailwind-rn'
 import * as Haptics from 'expo-haptics';
+import { router } from 'expo-router';
 
 interface PhotoProps {
     count?: number;
@@ -56,6 +57,7 @@ const ReportMore = () => {
 
     const handleMore = () => {
         Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Medium);
+        router && router.navigate('/(app)/(tabs)/home/reports');
     }
 
     return (

@@ -12,12 +12,10 @@ const Step1 = () => {
   const tw = useTailwind();
 
   const handleSendEmail = () => {
-    Haptics.notificationAsync(Haptics.NotificationFeedbackType.Success)
     router && router.navigate('/forgot-password/step2');
   }
 
   const handleSignin = () => {
-    Haptics.notificationAsync(Haptics.NotificationFeedbackType.Success)
     router && router.navigate('/sign-in');
   }
 

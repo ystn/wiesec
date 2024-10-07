@@ -6,14 +6,15 @@ from .models import Profile
 
 class SignupSerializer(serializers.Serializer):
     email = serializers.EmailField()
+    phone = serializers.CharField(max_length=20)
     first_name = serializers.CharField(max_length=150)
     last_name = serializers.CharField(max_length=150)
     birthday = serializers.DateField()
     password = serializers.CharField(max_length=128)
-    photo = serializers.ImageField()
+    photo = serializers.ImageField(required=False)
 
     class Meta:
-        fields = ["email", "first_name", "last_name", "birthday", "password", "photo"]
+        fields = ["email", "phone", "first_name", "last_name", "birthday", "password", "photo"]
 
     def create(self, validated_data):
         """
@@ -25,6 +26,7 @@ class SignupSerializer(serializers.Serializer):
         )
         profile = Profile.objects.create(
             user=user,
+            phone=validated_data["phone"],
             birthday=validated_data["birthday"],
             photo=validated_data["photo"],
         )

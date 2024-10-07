@@ -7,10 +7,11 @@ import * as z from 'zod';
 interface FormProps {
     children: React.ReactNode;
     zodSchema: any;
+    defaultValues?: any;
 }
 
-const Form = ({children, zodSchema}: FormProps) => {
-    const methods = useForm({ resolver: zodResolver(zodSchema)});
+const Form = ({children, zodSchema, defaultValues}: FormProps) => {
+    const methods = useForm({ resolver: zodResolver(zodSchema), defaultValues});
 
     return (
         <FormProvider {...methods}>

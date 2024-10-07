@@ -5,6 +5,7 @@ import Report from '@/components/report/Report'
 import ReportMore from '@/components/report/ReportMore'
 import Greeting from '@/components/Greeting'
 import AvatarList from '@/components/avatar/AvatarList'
+import { reports } from '@/assets/reports'
 
 const childrenList: AvatarList = {
   avatars: [
@@ -26,7 +27,7 @@ const Home = () => {
     <Screen safe="top">
       <ScrollView>
         <Greeting />
-        <Report />
+        <Report report={reports[0]} />
         <ReportMore />
         <AvatarList avatarList={childrenList} scroll={false} />
       </ScrollView>

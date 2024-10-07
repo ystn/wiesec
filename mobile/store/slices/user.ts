@@ -3,7 +3,7 @@ import { RootState } from "..";
 import { createSession } from "@/api/session";
 
 interface UserState {
-    value: User | null;
+    value: LoggedinUser | null;
     session: Session | null;
     isLoading: boolean;
 }
@@ -18,7 +18,7 @@ const userSlice = createSlice({
     name: 'user',
     initialState,
     reducers: {
-        login: (state, action: PayloadAction<User>) => {
+        login: (state, action: PayloadAction<LoggedinUser>) => {
             // state.user = {name: 'John', surname: 'Doe', birth: new Date(1989, 3, 5), sex: 'male', picture: ''}
             state.value = action.payload
             state.isLoading = true;

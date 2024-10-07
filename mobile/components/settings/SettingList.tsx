@@ -5,7 +5,7 @@ import { SettingListProps } from '@/types/props';
 import Setting from './Setting';
 
 const SettingList = ({ settingList }: SettingListProps) => {
-    const tw = useTailwind();
+  const tw = useTailwind();
   return (
     <View style={tw('flex-1 w-full')}>
       <Text style={tw('font-bold text-lg text-white')}>{settingList.title}</Text>

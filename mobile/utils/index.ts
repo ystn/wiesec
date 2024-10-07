@@ -19,8 +19,8 @@ export function getKeyboardType(inputType: InputType): KeyboardType {
     }
 }
 
-export function getFullName(user: User | null) {
+export function getFullName(user: User | SocialUser | null) {
     if(user)
-        return user.name + " " + user.last_name;
+        return user.first_name + " " + user.last_name;
     return "there";
 }

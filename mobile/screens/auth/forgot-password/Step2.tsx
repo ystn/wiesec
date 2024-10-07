@@ -12,12 +12,10 @@ const Step2 = () => {
   const tw = useTailwind();
 
   const handleSendEmail = () => {
-    Haptics.notificationAsync(Haptics.NotificationFeedbackType.Success)
     router
   }
 
   const handleSignin = () => {
-    Haptics.notificationAsync(Haptics.NotificationFeedbackType.Success)
     router && router.navigate('/sign-in');
   }
 
@@ -25,7 +23,7 @@ const Step2 = () => {
     <Screen>
       <Otp placeholder="Verification code"/>
       <KeyboardAvoidingView  behavior={Platform.OS === 'ios' ? 'padding' : 'height'} style={tw('mt-auto')}>
-          <Button variant="primary" onPress={handleSignin} title="Send email" />
+          <Button variant="primary" onPress={handleSendEmail} title="Confirm" />
           <View style={tw("flex flex-row items-center justify-center self-center mt-4")}>
               <Text variant="link">Already have an account? </Text>
               <Button variant="link" onPress={handleSignin} title="Sign in" />

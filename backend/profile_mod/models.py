@@ -7,6 +7,7 @@ from .utils import rename_image
 # Create your models here.
 class Profile(models.Model):
     user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
+    phone = models.CharField(max_length=20)
     birthday = models.DateField()
     photo = models.ImageField(upload_to=rename_image, null=True)
 
