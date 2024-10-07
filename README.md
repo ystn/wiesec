@@ -8,43 +8,43 @@
 - Langchain
 - Gemini -->
 <div style="display: flex; flex-direction: row; flex-wrap: wrap; align-items-center; justify-content: center;">
-    <div>
+    <!-- <div> -->
         <img alt="ReactJS" src="assets/React-Logo.png" style="height:150px; object-fit: contain" />
-    </div>
-    <div>
+    <!-- </div>
+    <div> -->
         <img alt="React Native" src="assets/React-Native-Logo.svg" style="width:200px; object-fit: contain" />
-    </div>
-    <div>
+    <!-- </div>
+    <div> -->
         <img alt="Expo" src="assets/Expo-Logo.webp" style="width:200px; object-fit: contain" />
-    </div>
-    <div>
+    <!-- </div>
+    <div> -->
         <img alt="Redux" src="assets/Redux-Logo.png" style="width:200px; object-fit: contain" />
-    </div>
-    <div>
+    <!-- </div>
+    <div> -->
         <img alt="API" src="assets/Api-Logo.webp" style="width:200px; object-fit: contain" />
-    </div>
-    <div>
+    <!-- </div>
+    <div> -->
         <img alt="HTTP" src="assets/Http-Logo.png" style="width:200px; object-fit: contain" />
-    </div>
-    <div>
+    <!-- </div>
+    <div> -->
         <img alt="Websocket" src="assets/Websocket-Logo.svg" style="width:200px; object-fit: contain" />
-    </div>
+    <!-- </div> -->
     <!-- <img alt="Django" src="assets/Django-Logo.png" style="width:200px; object-fit: contain" /> -->
-    <div>
+    <!-- <div> -->
         <img alt="Django Rest API" src="assets/Django-Rest-Logo.png" style="width:200px; object-fit: contain" />
-    </div>
-    <div>
+    <!-- </div>
+    <div> -->
         <img alt="My SQL" src="assets/Mysql-Logo.png" style="width:200px; object-fit: contain" />
-    </div>
-    <div>
+    <!-- </div>
+    <div> -->
         <img alt="Langchain" src="assets/Langchain-Logo.png" style="width:200px; object-fit: contain" />
-    </div>
-    <div>
+    <!-- </div>
+    <div> -->
         <img alt="Gemini" src="assets/Gemini-Logo.png" style="width:200px; object-fit: contain" />
-    </div>
-    <div>
+    <!-- </div>
+    <div> -->
         <img alt="Qdrant" src="assets/Qdrant-Logo.svg" style="width:200px; object-fit: contain" />
-    </div>
+    <!-- </div> -->
 </div>
 
 # Setting up the Mobile Application
