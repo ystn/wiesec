@@ -1,5 +1,6 @@
-# WieSec
-
+# Havenly
+Havenly’s mission is to provide users with the tools and resources they need to navigate the digital world with confidence and security. We are committed to ensuring that every human, regardless of age, can protect himself from online harassment, stalking, and data breaches. By offering features like Parental Control, users can safeguard young individuals from harmful content and potential threats. Additionally, our Psychological Assistance feature ensures that users affected by online abuse receive the support they need to recover emotionally.  
+With the help of AI-driven technology, Havenly actively detects and prevents cyberbullying while enabling users to block harmful behavior in real time. We aim to raise awareness and educate users about digital safety, empowering them to take control of their online privacy through our Education and Awareness section. Beyond protecting personal data, our app goes further by providing alerts for potential real-world threats, offering a holistic approach to online and offline security.
 
 # Technologies
 <!-- - ReactJS
