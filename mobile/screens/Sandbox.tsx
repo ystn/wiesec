@@ -3,6 +3,7 @@ import React from 'react'
 import Screen from './Screen'
 import QrScanner from '@/components/QrScanner'
 import HapticsScreen from '@/components/sandbox/Haptics'
+import QRCodeScreen from './qr/code'
 // import QRCode from 'react-native-qrcode-svg';
 
 const Sandbox = () => {
@@ -10,7 +11,8 @@ const Sandbox = () => {
   return (
     // <Screen>
       // <Text>Sandbox</Text>
-      <HapticsScreen />
+      // <HapticsScreen />
+      <QRCodeScreen />
       // <QrScanner />
       // <QRCode
     //   value="Just some string value"

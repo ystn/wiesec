@@ -18,13 +18,13 @@ const Setting = ({item, index, isLast}: SettingProps) => {
       }
   return (
     <>
-        <TouchableOpacity onPress={handlePress} style={tw('flex-row p-4 items-center')}>
+        <TouchableOpacity onPress={handlePress} style={tw('flex-row p-4 items-center z-10')}>
             <View style={tw('mr-4')}>
                 {item.icon}
             </View>
             <Text style={tw('text-white')}>{item.name}</Text>
         </TouchableOpacity>
-        {!isLast && <View style={tw('border-2 rounded-full border-gray-700')} />}
+        {!isLast && <View style={tw('border-2 rounded-full border-gray-700 z-0')} />}
     </>
   )
 }

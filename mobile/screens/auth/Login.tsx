@@ -2,24 +2,36 @@ import Button from "@/components/atoms/button";
 import Input from "@/components/atoms/input";
 import Text from "@/components/atoms/text";
 import Screen from "@/screens/Screen";
-import { login } from "@/store/slices/user";
+import { login, selectSession } from "@/store/slices/user";
 import { router } from "expo-router";
 import { View } from "react-native";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { useTailwind } from "tailwind-rn";
 import * as Haptics from 'expo-haptics';
+import Form from "@/components/form";
+import FormInput from "@/components/form/input";
+import { SignInSchema } from "@/schemas/signin";
+import FormButton from "@/components/form/button";
+import { useLoginMutation } from "@/store/api/auth";
 
 export default function () {
     const tw = useTailwind();
     const dispatch = useDispatch();
+    // const { isLoading } = useSelector(selectSession);
+    const [login, loginResult] = useLoginMutation()
+    // const { data: loginData, isLoading } = loginResult
 
     const handleForgotPassword = () => {
         Haptics.notificationAsync(Haptics.NotificationFeedbackType.Success)
         router && router.navigate('/forgot-password/step1');
     }
 
-    const handleSignin = () => {
-        dispatch(login({id: '1', name: 'John', last_name: 'Doe', birth: new Date(1989, 3, 5).getTime(), sex: 'male', picture: ''}));
+    const handleSignin = (values) => {
+        // dispatch(login({id: '1', name: 'John', last_name: 'Doe', birth: new Date(1989, 3, 5).getTime(), sex: 'male', picture: '', has_access: true}));
+        console.log("values", values);
+        login(values);
+        console.log("data", loginResult.data)
+
         Haptics.notificationAsync(Haptics.NotificationFeedbackType.Success)
         router.replace('/');
     }
@@ -30,15 +42,17 @@ export default function () {
     }
 
     return <Screen>
-        <Input placeholder="Email" type="email" returnKeyType="next"/>
-        <Input placeholder="Password" type="password"/>
-        <Button variant="link" onPress={handleForgotPassword} title="Forgot password?" style={tw("self-end mt-0")}/>
-        <View style={tw('mt-auto')}>
-            <Button variant="primary" onPress={handleSignin} title="Sign in" />
-            <View style={tw("flex flex-row items-center justify-center self-center mt-4")}>
-                <Text variant="link">Don't have an account? </Text>
-                <Button variant="link" onPress={handleSignup} title="Sign up" />
+        <Form zodSchema={SignInSchema}>
+            <FormInput name="username" placeholder="Email" type="email" returnKeyType="next"/>
+            <FormInput name="password" placeholder="Password" type="password"/>
+            <Button variant="link" onPress={handleForgotPassword} title="Forgot password?" style={tw("self-end mt-0")}/>
+            <View style={tw('mt-auto')}>
+                <FormButton variant="primary" onPress={handleSignin} title="Sign in" loading={loginResult.isLoading} />
+                <View style={tw("flex flex-row items-center justify-center self-center mt-4")}>
+                    <Text variant="link">Don't have an account? </Text>
+                    <Button variant="link" onPress={handleSignup} title="Sign up" />
+                </View>
             </View>
-        </View>
+        </Form>
     </Screen>
 }

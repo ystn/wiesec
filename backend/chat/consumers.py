@@ -1,17 +1,26 @@
-import json
-from channels.generic.websocket import WebsocketConsumer
+from channels.db import database_sync_to_async
+from channels.generic.websocket import AsyncJsonWebsocketConsumer
+
+from .llms import chain
+from .models import Message
 
 
-class ChatConsumer(WebsocketConsumer):
-    def connect(self):
+class ChatConsumer(AsyncJsonWebsocketConsumer):
+    async def connect(self):
         self.accept()
 
-    def disconnect(self, close_code):
+    async def disconnect(self, close_code):
         pass
 
-    def receive(self, text_data):
-        text_data_json = json.loads(text_data)
-        message = text_data_json['message']
-        self.send(text_data=json.dumps({
-            'message': message
-        }))
+    async def receive_json(self, content):
+        user = self.scope["user"]
+        message = content["message"]
+        print(message)
+        await self.save_message(message, user)
+        response = chain.invoke(message)
+        await self.save_message(response, user, sent_by=Message.SentBy.CHATBOT)
+
+    @database_sync_to_async
+    def save_message(self, message, user, sent_by=None):
+        Message.objects.create(content=message, user=user, sent_by=sent_by)
+        self.send({"status": "loading"})

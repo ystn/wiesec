@@ -50,9 +50,9 @@ export default function RootLayout() {
       <TailwindProvider utilities={utilities}>
         <SafeAreaProvider>
           <Provider store={store}>
-            <Slot />
-            {/* <Stack screenOptions={{ 
-              headerStyle: {backgroundColor: "rgb(10 10 10)"}, 
+            {/* <Slot /> */}
+            <Stack screenOptions={{
+              headerStyle: {backgroundColor: "rgb(10 10 10)"},
               headerTitleStyle: {color: 'white', fontSize: 26},
               headerBackVisible: false,
               }}>
@@ -60,9 +60,10 @@ export default function RootLayout() {
               <Stack.Screen name="sign-up" options={{ title: 'Sign up' }}/>
               <Stack.Screen name="forgot-password/step1" options={{ title: 'Forgot Password' }}/>
               <Stack.Screen name="forgot-password/step2" options={{ title: 'Forgot Password' }}/>
+              <Stack.Screen name="qrcode" options={{ title: 'Scan to Activate' }}/>
               <Stack.Screen name="(app)" options={{ headerShown: false }}/>
               <Stack.Screen name="+not-found" />
-            </Stack> */}
+            </Stack>
           </Provider>
         </SafeAreaProvider>
       </TailwindProvider>

@@ -67,3 +67,8 @@ export interface ProfileProps {
 export interface SettingListProps {
     settingList: SettingList
 }
+
+export interface AvatarListProps {
+    avatarList: AvatarList;
+    scroll?: boolean;
+}

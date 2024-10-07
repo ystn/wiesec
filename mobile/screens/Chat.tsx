@@ -11,7 +11,7 @@ const Chat = () => {
 
   return (
       <Screen small safe='top'>
-        <ChatHeader />
+        {/* <ChatHeader /> */}
         <MessageList />
         <ChatInput />
       </Screen>

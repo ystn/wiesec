@@ -5,6 +5,7 @@ interface User {
     sex: "male" | "female";
     birth: number;
     picture: string;
+    has_access: boolean;
 }
 
 interface Session {
@@ -31,4 +32,28 @@ interface Setting {
 interface SettingList {
     title: string;
     settings: Setting[];
+}
+
+interface Avatar {
+    onPress?: () => void;
+    id: string;
+    full_name: string;
+    image?: string;
+    icon?: any;
+    onDelete?: () => void;
+    navigate?: string;
+}
+
+interface AvatarList {
+    title?: string;
+    avatars: Avatar[];
+}
+
+interface Article {
+    id: number;
+    title: string;
+    description: string;
+    publisher: string;
+    date: string;
+    image: string;
 }

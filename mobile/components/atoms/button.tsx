@@ -3,6 +3,7 @@ import { AntDesign } from "@expo/vector-icons";
 import { StyleProp, Text, TouchableOpacity, View, ViewStyle } from "react-native";
 import { useTailwind } from "tailwind-rn";
 import Loading from "./loading";
+import { ButtonProps } from "@/types/props";
 
 const variants = cv({
     'primary': "rounded bg-violet-700 text-white",
@@ -19,8 +20,8 @@ export default function ({onPress, title, variant='default', style, disabled = f
     return <TouchableOpacity onPress={onPress} disabled={disabled}>
         {/* <View style={tw(variants(variant))}> */}
         <View style={[tw(bgStyle), style, disabledStyle]}>
-            {loading && <Loading />}
-            <Text style={tw(fgStyle)}>{title}</Text>
+            {loading && <Loading size={24} />}
+            {!loading && <Text style={tw(fgStyle)}>{title}</Text>}
         </View>
     </TouchableOpacity>
 }

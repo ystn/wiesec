@@ -26,7 +26,7 @@ export default function Input<T>({onBlur, onChange, onFocus, placeholder, value,
         </View>
 
     return <View style={tw(`bg-white rounded-full ${!small ? 'px-8 h-14 w-full' : 'px-2 h-10 flex-1'} my-4 flex flex-row`)}>
-        <TextInput style={tw(`flex-1 ${!small ? 'h-14' : 'h-10'}`)} onChangeText={onChange} onBlur={onBlur} placeholder={placeholder} value={value} onFocus={onFocus} secureTextEntry={password && !visible} keyboardType={getKeyboardType(type)} passwordRules={passwordRules} returnKeyType={returnKeyType}/>
+        <TextInput style={tw(`flex-1 ${!small ? 'h-14' : 'h-10'}`)} placeholderTextColor='gray' onChangeText={onChange} onBlur={onBlur} placeholder={placeholder} value={value} onFocus={onFocus} secureTextEntry={password && !visible} keyboardType={getKeyboardType(type)} passwordRules={passwordRules} returnKeyType={returnKeyType}/>
         {password && <TouchableOpacity onPress={toggleVisibility} style={tw('justify-center')}><Feather name={visible ? "eye-off" : "eye"} size={20}/></TouchableOpacity>}
     </View>
 }

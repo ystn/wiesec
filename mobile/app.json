@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "wiesec-v2",
-    "slug": "wiesec-v2",
+    "name": "WieSec",
+    "slug": "wiesec",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
