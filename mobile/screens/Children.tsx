@@ -2,29 +2,20 @@ import { View, Text } from 'react-native'
 import React from 'react'
 import AvatarList from '@/components/avatar/AvatarList'
 import { Feather } from '@expo/vector-icons'
+import { useSelector } from 'react-redux'
+import { selectChildren } from '@/store/slices/children'
 
-const childrenList: AvatarList = {
-    // title: 'Children',
-    avatars: [
-        {
-            full_name: 'Tim Cook',
-            onDelete: () => {}
-        },
-        {
-            full_name: 'Thomas Edison',
-            onDelete: () => {}
-        },
-        {
-          full_name: 'Scan a child',
-          icon: <Feather name="plus" color="white" size={24} />,
-          navigate: '/(app)/qrcode-scanner'
-        }
-    ]
+const addChild = {
+  id: '3',
+  full_name: 'Scan a child',
+  icon: <Feather name="plus" color="white" size={24} />,
+  navigate: '/(app)/qrcode-scanner'
 }
 
 const Children = () => {
+  const children = useSelector(selectChildren);
   return (
-    <AvatarList avatarList={childrenList} />
+    <AvatarList avatarList={{...children, avatars: [...children?.avatars, addChild] }} />
   )
 }
 

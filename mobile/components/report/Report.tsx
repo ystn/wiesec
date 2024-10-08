@@ -1,4 +1,4 @@
-import { View, Text, TouchableOpacity } from 'react-native'
+import { View, Text, TouchableOpacity, Image } from 'react-native'
 import React from 'react'
 import { useTailwind } from 'tailwind-rn'
 import * as Haptics from 'expo-haptics'
@@ -25,7 +25,7 @@ const Report = ({ report }: ReportProps) => {
     return (
     <View style={tw('rounded-2xl bg-red-950/90 border-red-500 border-2 w-full p-4 my-2')}>
         <View style={tw('flex-row mb-4')}>
-            <View style={tw('h-24 w-24 bg-gray-500 rounded-full')} />
+            {user.picture ? <Image source={{ uri: user.picture }} style={tw('h-24 w-24 bg-gray-500 rounded-full')} /> : <View style={tw('h-24 w-24 bg-gray-500 rounded-full')} />}
             <View style={tw('px-4 py-2 flex-1')}>
                 <View style={tw('pr-2 py-2 flex-1 text-wrap')}>
                     <Text style={tw('text-white font-bold text-lg')}>{getFullName(user)}</Text>

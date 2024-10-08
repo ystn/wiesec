@@ -28,8 +28,7 @@ const SafeScreen = ({safe='all', children}: SafeScreenProps) => {
 
 const Screen = ({children, safe='all', small=false}: ScreenProps) => {
     const tw = useTailwind();
-    const keyboardHeight = useKeyboard();
-    console.log(keyboardHeight)
+    // const keyboardHeight = useKeyboard();
   return (
     <TouchableWithoutFeedback onPress={() => Keyboard.dismiss()}>
       <KeyboardAvoidingView behavior={Platform.OS === 'ios' ? 'padding' : 'height'} style={tw(`flex-1`)}>

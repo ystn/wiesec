@@ -32,7 +32,7 @@ export default function () {
         // login(values);
         // console.log("data", loginResult.data)
 
-        router.replace('/');
+        router.replace('/(app)/(tabs)/home');
     }
 
     const handleSignup = () => {

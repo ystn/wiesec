@@ -5,12 +5,14 @@ import chatbotSlice from "./slices/chatbot"
 import { messageApi } from "./api/message"
 import { authApi } from "./api/auth"
 import locationSlice from "./slices/location"
+import childrenSlice from "./slices/children"
 
 const store = configureStore({
     reducer: {
         user: userSlice.reducer,
         chatbot: chatbotSlice.reducer,
         location: locationSlice.reducer,
+        children: childrenSlice.reducer,
         [messageApi.reducerPath]: messageApi.reducer,
         [authApi.reducerPath]: authApi.reducer,
     },
@@ -21,7 +23,7 @@ const store = configureStore({
 setupListeners(store.dispatch)
 
 // Can still subscribe to the store
-store.subscribe(() => console.log(store.getState()))
+// store.subscribe(() => console.log(store.getState()))
 
 // Infer the `RootState` and `AppDispatch` types from the store itself
 export type RootState = ReturnType<typeof store.getState>

@@ -8,10 +8,7 @@ from langchain_core.runnables.history import RunnableWithMessageHistory
 from langchain_google_genai import ChatGoogleGenerativeAI
 from langchain_google_genai import HarmBlockThreshold
 from langchain_google_genai import HarmCategory
-
-# from langchain_core.prompts import PromptTemplate
-# from pydantic import BaseModel
-# from pydantic import Field
+from langchain_core.prompts import ChatPromptTemplate
 
 load_dotenv(".env")
 
@@ -28,11 +25,18 @@ model = ChatGoogleGenerativeAI(
 )
 
 messages = [
-    SystemMessage(content="Translate the following from English into Italian"),
-    HumanMessage(content="hi!"),
+    SystemMessage(content="""As a compassionate and professional psychologist, your role is to provide emotional support and guidance to users of a harassment detection application. Users may come to you feeling vulnerable, confused, or distressed. Your objective is to:
+        - Listen empathetically to their concerns and acknowledge their feelings.
+        - Help them understand the nature of harassment and its emotional impacts.
+        - Offer coping strategies to manage anxiety, stress, or trauma resulting from harassment.
+        - Guide them on how to safely address and respond to harassment, including when to seek professional help or report incidents.
+        - Maintain a tone that is non-judgmental, supportive, and reassuring, making sure to prioritize the user's emotional well-being and safety.
+        Remember, your responses should empower users, helping them to feel heard, validated, and capable of taking action, while maintaining sensitivity to their unique circumstances.
+    """),
+    HumanMessage(content="{text}"),
 ]
 
-# prompt = PromptTemplate.from_template(messages)
+prompt = ChatPromptTemplate.from_messages(messages)
 
 store = {}
 
@@ -45,4 +49,4 @@ def get_session_history(session_id: str) -> BaseChatMessageHistory:
 
 with_message_history = RunnableWithMessageHistory(model, get_session_history)
 parser = StrOutputParser()
-chain = model | with_message_history
+chain = prompt | with_message_history | parser

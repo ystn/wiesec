@@ -6,7 +6,6 @@ import { useTailwind } from "tailwind-rn";
 
 export default () => {
     const {session, isLoading, value: user} = useSelector(selectSession);
-    console.log(session)
 
     if(isLoading) return <Text>Loading...</Text>
 

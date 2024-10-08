@@ -14,6 +14,8 @@ import { SignUpSchema, SignUpSchemaType } from "@/schemas/signup";
 import { useFormContext } from "react-hook-form";
 import { useSignupMutation } from "@/store/api/auth";
 import FormButton from "@/components/form/button";
+import { useDispatch } from "react-redux";
+import { login } from "@/store/slices/user";
 
 interface SignupFormProps {
     handleSignup: (values: SignUpSchemaType) => void;
@@ -39,7 +41,7 @@ function Step2() {
 function SignupForm({handleSignup}: SignupFormProps) {
     const tw = useTailwind();
     const { trigger } = useFormContext();
-    const totalSteps = 3;
+    const totalSteps = 2;
     const fields = [["first_name", "last_name", "birthday"], ["email", "phone", "password", "confirm_password"]]
     const [step, setStep] = useState<number>(1);
 
@@ -88,10 +90,13 @@ function SignupForm({handleSignup}: SignupFormProps) {
 
 export default function () {
     const tw = useTailwind();
-    const [signup, signupResult] = useSignupMutation();
+    const dispatch = useDispatch();
+    // const [signup, signupResult] = useSignupMutation();
     const handleSignup = ({confirm_password, birthday, ...values}: SignUpSchemaType) => {
         console.log(values);
-        signup({...values, birthday: birthday.getDate()})
+        dispatch(login({id: '1', first_name: 'John', last_name: 'Doe', birthday: new Date(1989, 3, 5).getTime(), picture: '', has_access: false}))
+        router && router.replace('/qrcode');
+        // signup({...values, birthday: birthday.getDate()})
     }
 
     return <Screen>

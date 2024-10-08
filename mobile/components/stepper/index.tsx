@@ -28,11 +28,8 @@ const Stepper = ({steps, currentStep, onStepPress}: StepperProps) => {
   return (
     <View style={tw('flex-row items-center m-4')}>
       {arr.map((value, index) => {
-        console.log(index)
-        console.log(index + arr.length)
         const isFirst = value == 0;
         const isLast = value >= steps - 1;
-        console.log("last", isLast)
         return <>
             {!isFirst && <Separator active={value + 1 <= currentStep} key={index + arr.length} />}
             <Bubble onStepPress={handleStepPress} number={value + 1} currentStep={currentStep} key={index} />

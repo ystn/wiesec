@@ -8,7 +8,6 @@ import SettingList from '../settings/SettingList'
 import { useSelector } from 'react-redux'
 import { selectUser } from '@/store/slices/user'
 import { getFullName } from '@/utils'
-import AvatarList from '../avatar/AvatarList'
 
 const Profile = ({big}: ProfileProps) => {
     const tw = useTailwind();

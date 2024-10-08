@@ -12,11 +12,13 @@ const childrenList: AvatarList = {
     {
       id: '1',
       full_name: 'Tim Cook',
+      image: 'https://pbs.twimg.com/profile_images/1535420431766671360/Pwq-1eJc_400x400.jpg',
       onDelete: () => {}
     },
     {
       id: '2',
-      full_name: 'Thomas Edison',
+      full_name: 'Elon Musk',
+      image: 'https://cdn.futura-sciences.com/buildsv6/images/largeoriginal/d/9/a/d9a1058910_50163142_elon-musk1.jpg',
       onDelete: () => {}
     }
   ]

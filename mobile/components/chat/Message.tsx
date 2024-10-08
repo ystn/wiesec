@@ -16,7 +16,7 @@ const Message = ({message, prev, next, isLast}: MessageProps) => {
     const isRead = message.status === 'read'
   return (
     <View style={tw(`${self ? 'self-end items-end' : ''}`)}>
-        <View style={tw(`rounded-2xl px-4 py-2 ${self ? 'bg-violet-800 rounded-br-none' : 'bg-gray-600 rounded-bl-none'} ${samePrev ? self ? 'rounded-tr-none' : 'rounded-tl-none' : ''} ${samePrev ? 'mt-1' : 'mt-4'} ${isLast ? 'mb-1' : ''}`)}>
+        <View style={tw(`rounded-2xl px-4 py-2 ${self ? 'bg-violet-800 rounded-br-none ml-12' : 'bg-gray-600 rounded-bl-none mr-12'} ${samePrev ? self ? 'rounded-tr-none' : 'rounded-tl-none' : ''} ${samePrev ? 'mt-1' : 'mt-4'} ${isLast ? 'mb-1' : ''}`)}>
             <Text style={tw('text-white')}>{message.content}</Text>
         </View>
       {(isLast && self) && (isPending ?

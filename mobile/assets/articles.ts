@@ -1,0 +1,42 @@
+export const articles: { [key:number]: Article } = {
+    1: {
+        id: 1,
+        title: 'Trolling',
+        description: 'Engaging in deliberately offensive or provocative behavior online to upset others or cause a reaction. Trolls often post inflammatory comments or start arguments for their own amusement.',
+        publisher: 'Leonardo Davinci',
+        date: '20 Sep. 2024 8:00AM',
+        image: 'https://newsliteracy.psu.edu/assets/uploads/images/_1280xAUTO_fit_center-center_80_none/Trolls-_Smaller.jpg',
+    },
+    2: {
+        id: 2,
+        title: 'Cyberbullying',
+        description: 'This is repeated harmful behavior, often targeted at younger users, involving the use of digital platforms to mock, shame, or threaten someone. Cyberbullying can include spreading rumors, sending threatening messages, or sharing embarrassing photos to publicly humiliate someone.',
+        publisher: 'Leonardo Davinci',
+        date: '20 Sep. 2024 8:00AM',
+        image: 'https://eraofkashmir.com/wp-content/uploads/2023/11/image-11.png',
+    },
+    3: {
+        id: 3,
+        title: 'Doxxing',
+        description: 'The act of publishing someone\'s private or personal information (like home address, phone number, or workplace) online without their consent. Doxxing is intended to intimidate, harass, or cause harm by exposing sensitive information.',
+        publisher: 'Leonardo Davinci',
+        date: '20 Sep. 2024 8:00AM',
+        image: 'https://www.infosecawareness.in/concept/index.php?img=Doxxing-min0117',
+    },
+    4: {
+        id: 4,
+        title: 'Cyberstalking',
+        description: 'A form of harassment that involves the use of the internet to repeatedly monitor, follow, or engage with someone to instill fear or exert control. This can involve tracking a person’s online activity or sending obsessive, threatening messages over an extended period.',
+        publisher: 'Leonardo Davinci',
+        date: '20 Sep. 2024 8:00AM',
+        image: 'https://www.shutterstock.com/image-vector/3d-isometric-flat-vector-conceptual-600nw-2334997779.jpg',
+    },
+    5: {
+        id: 5,
+        title: 'Revenge Porn',
+        description: 'The non-consensual sharing of intimate images or videos to humiliate or harm the victim. Often, this type of harassment happens when intimate content is shared after a relationship ends to embarrass or blackmail the victim.',
+        publisher: 'Leonardo Davinci',
+        date: '20 Sep. 2024 8:00AM',
+        image: 'https://positivepath.gr/wp-content/uploads/2023/11/399909610_1039550144041972_5231198590649947872_n-1280x695.jpg',
+    },
+}

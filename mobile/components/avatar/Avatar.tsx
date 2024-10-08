@@ -4,6 +4,7 @@ import { useTailwind } from 'tailwind-rn';
 import * as Haptics from 'expo-haptics';
 import { Feather } from '@expo/vector-icons';
 import { Href, router } from 'expo-router';
+import { deleteChild } from '@/store/slices/children';
 
 interface AvatarProps {
     item: Avatar;
@@ -21,6 +22,7 @@ const Avatar = ({item, index, isLast}: AvatarProps) => {
     }
 
     const handleDelete = () => {
+        deleteChild(item.id);
         item.onDelete?.();
     }
   return (
@@ -28,8 +30,9 @@ const Avatar = ({item, index, isLast}: AvatarProps) => {
         <TouchableOpacity onPress={handlePress} style={tw('flex-row p-4 items-center')}>
             <View style={tw('flex-1 flex-row items-center')}>
                 <View style={tw('mr-4')}>
-                    { item?.icon || <View style={tw('rounded-full w-16 h-16 bg-gray-500')} /> }
-                    {/* {item.image ? <Image source={require(item.image)} /> : <View style={tw('rounded-full w-16 h-16 bg-gray-500')} />} */}
+                    { item?.icon }
+                    {/* { item?.icon || <View style={tw('rounded-full w-16 h-16 bg-gray-500')} /> } */}
+                    {item?.image && <Image source={{ uri: item.image }} style={tw('rounded-full w-16 h-16 bg-gray-500')} />}
                 </View>
                 <Text style={tw('text-white')}>{item.full_name}</Text>
             </View>

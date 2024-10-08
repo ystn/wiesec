@@ -13,9 +13,9 @@ const RobberyScreen = () => {
     }
     return (
         <MapView style={tw('flex-1 w-full h-full')} showsUserLocation followsUserLocation>
-            <View style={tw('mx-4 top-12 bg-red-950/90 border-red-500 border-2 rounded-full h-14 items-center justify-center')}>
+            <SafeAreaView style={tw('mx-4 top-12 bg-red-950/90 border-red-500 border-2 rounded-full h-14 items-center justify-center')}>
                 <Text style={tw('text-white font-bold')}>You are in a danger zone!</Text>
-            </View>
+            </SafeAreaView>
             {markers.map((marker, index) => (
                 <Marker key={index}  coordinate={marker} onPress={() => handleMarkerSelected(marker)}/>
             ))}
