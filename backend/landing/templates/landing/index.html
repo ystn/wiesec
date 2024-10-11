@@ -7,7 +7,7 @@
     <!--- basic page needs
     ================================================== -->
     <meta charset="utf-8">
-    <title>WieSec</title>
+    <title>Havenly</title>
     <meta name="description" content="">
     <meta name="author" content="">
 
@@ -52,9 +52,10 @@
 
         <div class="row">
             <div class="header-logo">
-                <a class="site-logo" href="index.html">
-                    <img src="{% static "images/logo.svg" %}" alt="Homepage">
+                <a class="site-logo" style="" href="index.html">
+                    <img src="{% static "images/wiesec-logo.png" %}" alt="Homepage">
                 </a>
+                <span style="font-weight: 700; color: white; font-size: 1.7em; margin-left: .3em;">Havenly</span>
             </div>
 
             <nav class="header-nav-wrap">
@@ -89,13 +90,16 @@
 
                 <div class="home-content__left">
                     <h1>
-                    An Amazing App <br>
-                    That Ensures Your Security.
+                    {% comment %} An Amazing App <br>
+                    That Ensures Women's <br>
+                    PriSec. {% endcomment %}
+                    Empower, Protect, Support.
                     </h1>
 
                     <h3>
-                    Voluptatem ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explica. Nemo enim ipsam voluptatem quia.
-                    Ut quis enim.
+                        {% comment %} Women face significant risks to their online privacy and security, with a growing number experiencing harassment, data breaches, and lack of control over their personal information.  {% endcomment %}
+                        {% comment %} Experience a safer digital world with Havenly, designed to empower women against online threats. Our app combines real-time protection, emotional support, and essential resources to help you navigate the internet confidently. From monitoring suspicious activity to providing personalized coping strategies, Havenly is your trusted companion for a secure online experience. Join us in reclaiming your digital space today! {% endcomment %}
+                        Havenly empowers women with real-time protection, emotional support, and resources for safe online navigation, making it a trusted companion in reclaiming digital spaces.
                     </h3>
 
                     <div class="home-content__btn-wrap">
@@ -106,7 +110,8 @@
                 </div> <!-- end home-content__left-->
 
                 <div class="home-content__right">
-                    <img src="{% static "images/hero-app-screens-800.png" %}" srcset="{% static "images/hero-app-screens-800.png" %} 1x, {% static "images/hero-app-screens-1600.png" %} 2x">
+                    {% comment %} <img src="{% static "images/hero-app-screens-800.png" %}" srcset="{% static "images/hero-app-screens-800.png" %} 1x, {% static "images/hero-app-screens-1600.png" %} 2x"> {% endcomment %}
+                    <img src="{% static "images/hero.png" %}">
                 </div> <!-- end home-content__right -->
 
             </div> <!-- end home-content__main -->
@@ -134,12 +139,10 @@
         <div class="row section-header has-bottom-sep" data-aos="fade-up" data-aos-duration="300">
             <div class="col-full">
                 <h1 class="display-1">
-                    Simply The Best Messaging App Out There.
+                    Empower Your Online Journey: Protect, Support, and Educate with Havenly!
                 </h1>
                 <p class="lead">
-                    Et nihil atque ex. Reiciendis et rerum ut voluptate. Omnis molestiae nemo est.
-                    Ut quis enim rerum quia assumenda repudiandae non cumque qui. Amet repellat
-                    omnis ea.
+                    Havenly empowers women with protection against online threats, emotional support, and educational resources for safer digital navigation, fostering confidence and security online.
                 </p>
             </div>
         </div> <!-- end section-header -->
@@ -149,42 +152,48 @@
             <div class="col-full slick-slider about-desc__slider">
 
                 <div class="about-desc__slide">
-                    <h3 class="item-title">Intuitive.</h3>
+                    <h3 class="item-title">Parental Control.</h3>
 
                     <p>
-                    Et nihil atque ex. Reiciendis et rerum ut voluptate. Omnis molestiae nemo est.
-                    Ut quis enim rerum quia assumenda repudiandae non cumque qui. Amet repellat
-                    omnis ea aut cumque eos.
+                        Havenly's Parental Control feature helps parents protect young girls from online threats by monitoring interactions, setting restrictions, and sending real-time alerts, promoting safer digital habits and peace of mind.
                     </p>
                 </div>  <!-- end about-desc__slide -->
 
                 <div class="about-desc__slide">
-                    <h3 class="item-title">Smart.</h3>
+                    <h3 class="item-title">Psychological Assistant.</h3>
 
                     <p>
-                    Et nihil atque ex. Reiciendis et rerum ut voluptate. Omnis molestiae nemo est.
-                    Ut quis enim rerum quia assumenda repudiandae non cumque qui. Amet repellat
-                    omnis ea aut cumque eos.
+                        Havenly's Psychological Assistance feature uses AI to support women facing online harassment by offering coping strategies, mood tracking, and guidance, helping them manage emotional distress and promoting mental well-being.
                     </p>
                 </div>  <!-- end about-desc__slide -->
 
                 <div class="about-desc__slide">
-                    <h3 class="item-title">Powerful.</h3>
+                    <h3 class="item-title">Ensuring safety.</h3>
 
                     <p>
-                    Et nihil atque ex. Reiciendis et rerum ut voluptate. Omnis molestiae nemo est.
-                    Ut quis enim rerum quia assumenda repudiandae non cumque qui. Amet repellat
-                    omnis ea aut cumque eos.
+                        Havenly's Ensuring Safety feature uses AI to monitor online interactions, detect threats, and provide real-time alerts, helping women protect their digital presence and engage safely online.
                     </p>
                 </div>  <!-- end about-desc__slide -->
 
                 <div class="about-desc__slide">
-                    <h3 class="item-title">Secure.</h3>
+                    <h3 class="item-title">Potential Robbery Alert.</h3>
 
                     <p>
-                    Et nihil atque ex. Reiciendis et rerum ut voluptate. Omnis molestiae nemo est.
-                    Ut quis enim rerum quia assumenda repudiandae non cumque qui. Amet repellat
-                    omnis ea aut cumque eos.
+                        Havenly's Potential Robbery Alert uses Google Maps to warn users of unsafe areas, helping women avoid danger by sending real-time alerts based on their location.
+                    </p>
+                </div>  <!-- end about-desc__slide -->
+                <div class="about-desc__slide">
+                    <h3 class="item-title">Educational And Awarness.</h3>
+
+                    <p>
+                        Havenly's Educational and Awareness feature provides resources on online safety, helping women understand digital threats and protect their personal information, promoting proactive safety and digital literacy.
+                    </p>
+                </div>  <!-- end about-desc__slide -->
+                <div class="about-desc__slide">
+                    <h3 class="item-title">Protecting Personal Data.</h3>
+
+                    <p>
+                        Havenly's Protecting Personal Data feature helps users secure their online accounts by promoting privacy controls, strong passwords, two-factor authentication, and awareness of phishing, empowering women to safeguard their personal information.
                     </p>
                 </div>  <!-- end about-desc__slide -->
 
@@ -237,26 +246,26 @@
                 <div class="process__steps block-1-2 block-tab-full group">
 
                     <div class="col-block step">
-                        <h3 class="item-title">Sign-Up</h3>
-                        <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.
+                        <h3 class="item-title">User Protection</h3>
+                        <p>Havenly prioritizes user safety by monitoring online interactions and identifying potential threats such as harassment and doxxing. The app uses AI to provide real-time alerts when suspicious activities are detected, allowing users to take immediate action to protect themselves.
                         </p>
                     </div>
 
                     <div class="col-block step">
-                        <h3 class="item-title">Create</h3>
-                        <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.
+                        <h3 class="item-title">Emotional Support</h3>
+                        <p>The app offers AI-powered psychological assistance, providing personalized coping strategies, mood tracking, and therapeutic exercises for women affected by online harassment. It identifies signs of emotional distress and offers timely guidance or professional help, promoting mental well-being.
                         </p>
                     </div>
 
                     <div class="col-block step">
-                        <h3 class="item-title">Compose</h3>
-                        <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.
+                        <h3 class="item-title">Education and Awareness</h3>
+                        <p>Havenly empowers users with resources on online safety, including tutorials on privacy protection and recognizing digital threats. This feature encourages continuous learning about digital literacy, helping women stay informed and confident in navigating the digital world.
                         </p>
                     </div>
 
                     <div class="col-block step">
-                        <h3 class="item-title">Send</h3>
-                        <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.
+                        <h3 class="item-title">Data Management</h3>
+                        <p>The app helps users manage and secure their online accounts by promoting strong passwords, two-factor authentication, and monitoring data sharing. It educates users on recognizing phishing attempts and unauthorized access, ensuring comprehensive protection of personal information.
                         </p>
                     </div>
 
@@ -277,9 +286,7 @@
                     Loaded With Features You Would Absolutely Love.
                 </h1>
                 <p class="lead">
-                    Et nihil atque ex. Reiciendis et rerum ut voluptate. Omnis molestiae nemo est.
-                    Ut quis enim rerum quia assumenda repudiandae molestiae cumque qui. Amet repellat
-                    omnis ea.
+                    Havenly empowers women with real-time protection, emotional support, and educational resources on online safety. It includes secure account management tools, strong password recommendations, two-factor authentication, and safety alerts for unsafe areas.
                 </p>
             </div>
         </div> <!-- end section-header -->
@@ -288,26 +295,24 @@
 
             <div class="col-block item-feature" data-aos="fade-up" data-aos-duration="300">
                 <div class="item-feature__icon">
-                    <i class="icon-upload"></i>
+                    <i class="icon-shield"></i>
                 </div>
                 <div class="item-feature__text">
-                    <h3 class="item-title">Cloud Based</h3>
-                    <p>Nemo cupiditate ab quibusdam quaerat impedit magni. Earum suscipit ipsum laudantium.
-                    Quo delectus est. Maiores voluptas ab sit natus veritatis ut. Debitis nulla cumque veritatis.
-                    Sunt suscipit voluptas ipsa in tempora esse soluta sint.
+                    <h3 class="item-title">Parental Control</h3>
+                    <p>
+                        Havenly's Parental Control feature helps parents protect young girls from online threats by monitoring interactions, setting restrictions, and sending real-time alerts, promoting safer digital habits and peace of mind.
                     </p>
                 </div>
             </div>
 
             <div class="col-block item-feature" data-aos="fade-up" data-aos-duration="300">
                 <div class="item-feature__icon">
-                    <i class="icon-video-camera"></i>
+                    <i class="icon-heart"></i>
                 </div>
                 <div class="item-feature__text">
-                    <h3 class="item-title">Voice & Video</h3>
-                    <p>Nemo cupiditate ab quibusdam quaerat impedit magni. Earum suscipit ipsum laudantium.
-                    Quo delectus est. Maiores voluptas ab sit natus veritatis ut. Debitis nulla cumque veritatis.
-                    Sunt suscipit voluptas ipsa in tempora esse soluta sint.
+                    <h3 class="item-title">Psychological Assistant</h3>
+                    <p>
+                        Havenly's Psychological Assistance feature uses AI to support women facing online harassment by offering coping strategies, mood tracking, and guidance, helping them manage emotional distress and promoting mental well-being.
                     </p>
                 </div>
             </div>
@@ -317,10 +322,9 @@
                     <i class="icon-shield"></i>
                 </div>
                 <div class="item-feature__text">
-                    <h3 class="item-title">Always Secure</h3>
-                    <p>Nemo cupiditate ab quibusdam quaerat impedit magni. Earum suscipit ipsum laudantium.
-                    Quo delectus est. Maiores voluptas ab sit natus veritatis ut. Debitis nulla cumque veritatis.
-                    Sunt suscipit voluptas ipsa in tempora esse soluta sint.
+                    <h3 class="item-title">Ensuring safety</h3>
+                    <p>
+                        Havenly's Ensuring Safety feature uses AI to monitor online interactions, detect threats, and provide real-time alerts, helping women protect their digital presence and engage safely online.
                     </p>
                 </div>
             </div>
@@ -330,10 +334,9 @@
                     <i class="icon-lego-block"></i>
                 </div>
                 <div class="item-feature__text">
-                    <h3 class="item-title">Play Games</h3>
-                    <p>Nemo cupiditate ab quibusdam quaerat impedit magni. Earum suscipit ipsum laudantium.
-                    Quo delectus est. Maiores voluptas ab sit natus veritatis ut. Debitis nulla cumque veritatis.
-                    Sunt suscipit voluptas ipsa in tempora esse soluta sint.
+                    <h3 class="item-title">Potential Robbery Alert</h3>
+                    <p>
+                        Havenly's Potential Robbery Alert uses Google Maps to warn users of unsafe areas, helping women avoid danger by sending real-time alerts based on their location.
                     </p>
                 </div>
             </div>
@@ -343,10 +346,9 @@
                     <i class="icon-chat"></i>
                 </div>
                 <div class="item-feature__text">
-                    <h3 class="item-title">Group Chat</h3>
-                    <p>Nemo cupiditate ab quibusdam quaerat impedit magni. Earum suscipit ipsum laudantium.
-                    Quo delectus est. Maiores voluptas ab sit natus veritatis ut. Debitis nulla cumque veritatis.
-                    Sunt suscipit voluptas ipsa in tempora esse soluta sint.
+                    <h3 class="item-title">Educational And Awarness</h3>
+                    <p>
+                        Havenly's Educational and Awareness feature provides resources on online safety, helping women understand digital threats and protect their personal information, promoting proactive safety and digital literacy.
                     </p>
                 </div>
             </div>
@@ -356,10 +358,9 @@
                     <i class="icon-wallet"></i>
                 </div>
                 <div class="item-feature__text">
-                    <h3 class="item-title">Payments</h3>
-                    <p>Nemo cupiditate ab quibusdam quaerat impedit magni. Earum suscipit ipsum laudantium.
-                    Quo delectus est. Maiores voluptas ab sit natus veritatis ut. Debitis nulla cumque veritatis.
-                    Sunt suscipit voluptas ipsa in tempora esse soluta sint.
+                    <h3 class="item-title">Protecting Personal Data</h3>
+                    <p>
+                        Havenly's Protecting Personal Data feature helps users secure their online accounts by promoting privacy controls, strong passwords, two-factor authentication, and awareness of phishing, empowering women to safeguard their personal information.
                     </p>
                 </div>
             </div>
@@ -379,10 +380,10 @@
                 <div class="col-full slick-slider testimonials__slider">
 
                     <div class="testimonials__slide">
-                        <img src="{% static "images/avatars/user-03.jpg" %}" alt="Author image" class="testimonials__avatar">
+                        {% comment %} <img src="{% static "images/avatars/user-03.jpg" %}" alt="Author image" class="testimonials__avatar"> {% endcomment %}
+                        <img style="object-fit: cover" src="https://media.istockphoto.com/id/1437816897/photo/business-woman-manager-or-human-resources-portrait-for-career-success-company-we-are-hiring.jpg?s=612x612&w=0&k=20&c=tyLvtzutRh22j9GqSGI33Z4HpIwv9vL_MZw_xOE19NQ=" alt="Author image" class="testimonials__avatar">
 
-                        <p>Qui ipsam temporibus quisquam velMaiores eos cumque distinctio nam accusantium ipsum.
-                        Laudantium quia consequatur molestias delectus culpa facere hic dolores aperiam. Accusantium praesentium corpori.</p>
+                        <p>Havenly has completely changed my online experience! I feel so much safer knowing that I have real-time alerts for any suspicious activity. The emotional support features have also been a lifesaver, helping me cope with online stress. Highly recommend this app to every woman!</p>
 
                         <div class="testimonials__author">
                             <span class="testimonials__name">Naruto Uzumaki</span>
@@ -393,8 +394,7 @@
                     <div class="testimonials__slide">
                         <img src="{% static "images/avatars/user-05.jpg" %}" alt="Author image" class="testimonials__avatar">
 
-                        <p>Excepturi nam cupiditate culpa doloremque deleniti repellat. Veniam quos repellat voluptas animi adipisci.
-                        Nisi eaque consequatur. Quasi voluptas eius distinctio. Atque eos maxime. Qui ipsam temporibus quisquam vel.</p>
+                        <p>I love Havenly! The educational resources are incredibly informative, and I’ve learned so much about online safety. It’s empowering to have tools that help me navigate the internet confidently. I feel more in control of my digital presence than ever before!</p>
 
                         <div class="testimonials__author">
                             <span class="testimonials__name">Sasuke Uchiha</span>
@@ -403,10 +403,10 @@
                     </div> <!-- end testimonials__slide -->
 
                     <div class="testimonials__slide">
-                        <img src="{% static "images/avatars/user-01.jpg" %}" alt="Author image" class="testimonials__avatar">
+                        {% comment %} <img src="{% static "images/avatars/user-01.jpg" %}" alt="Author image" class="testimonials__avatar"> {% endcomment %}
+                        <img style="object-fit: cover" src="https://img.freepik.com/free-photo/tender-woman-having-brow-color-added-her-eyebrows_231208-3536.jpg" alt="Author image" class="testimonials__avatar">
 
-                        <p>Repellat dignissimos libero. Qui sed at corrupti expedita voluptas odit. Nihil ea quia nesciunt. Ducimus aut sed ipsam.
-                        Autem eaque officia cum exercitationem sunt voluptatum accusamus. Quasi voluptas eius distinctio.</p>
+                        <p>Havenly is an essential app for any woman in today’s digital world. The combination of protection and emotional support is fantastic. Knowing that I can rely on it for real-time safety alerts and coping strategies gives me peace of mind. Thank you, Havenly, for making the internet a safer place!</p>
 
                         <div class="testimonials__author">
                             <span class="testimonials__name">Shikamaru Nara</span>
@@ -503,9 +503,7 @@
                     Join Our Community.
                 </h1>
                 <p class="lead">
-                    Et nihil atque ex. Reiciendis et rerum ut voluptate. Omnis molestiae nemo est.
-                    Ut quis enim rerum quia assumenda repudiandae non cumque qui. Amet repellat
-                    omnis ea.
+                    Connect with women focused on online safety. Gain access to exclusive resources, support, and discussions. Share experiences and empower each other. Sign up today!
                 </p>
             </div>
         </div> <!-- end section-header -->
@@ -568,13 +566,10 @@
 
             <div class="footer__about col-five tab-full left">
 
-                <h4>About WieSec.</h4>
+                <h4>About Havenly.</h4>
 
                 <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed
-                do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                laboris nisi ut aliquip ex consectetur adipisicing elit do eiusmod tempor.
+                    Havenly empowers women with real-time protection, emotional support, and resources for safe online navigation, making it a trusted companion in reclaiming digital spaces.
                 </p>
 
                 <ul class="footer__social">
@@ -594,7 +589,7 @@
                             <li><a href="#home" class="smoothscroll">Intro</a></li>
                             <li><a href="#about" class="smoothscroll">About</a></li>
                             <li><a href="#features" class="smoothscroll">Features</a></li>
-                            <li><a href="#pricing" class="smoothscroll">Pricing</a></li>
+                            {% comment %} <li><a href="#pricing" class="smoothscroll">Pricing</a></li> {% endcomment %}
                             <li><a href="#download" class="smoothscroll">Download</a></li>
                             <li><a href="#0">Privacy Policy</a></li>
                         </ul>
@@ -605,7 +600,7 @@
 
                         <p>
                         Need help or have a question? Contact us at: <br>
-                        <a href="mailto:#0" class="footer__mail-link">support@wiesec.com</a>
+                        <a href="mailto:#0" class="footer__mail-link">support@havenly.com</a>
                         </p>
                     </div>
 
@@ -613,7 +608,7 @@
             </div>
 
             <div class="col-full ss-copyright">
-                <span>&copy; Copyright WieSec {% now 'Y' %}</span>
+                <span>&copy; Copyright Havenly {% now 'Y' %}</span>
             </div>
 
         </div> <!-- end footer__bottom -->
